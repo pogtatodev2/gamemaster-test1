@@ -1,0 +1,110 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgtweklw0hq3k"]
+
+[ext_resource type="FontFile" uid="uid://cbeh77ugvvvhw" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="1_f80wh"]
+[ext_resource type="Script" path="res://scenes slash scripts/glovar.gd" id="1_neyt8"]
+[ext_resource type="Script" path="res://scenes slash scripts/nameChecker.gd" id="2_hktyw"]
+[ext_resource type="FontFile" uid="uid://clholgmn1ksxe" path="res://fonts/super-mario-bros-nes.ttf" id="2_u6mwd"]
+
+[node name="nameSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_neyt8")
+
+[node name="idText" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 531.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("1_f80wh")
+theme_override_font_sizes/font_size = 41
+text = "ENTER YOUR IDENTIFIER.
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -15
+layout_mode = 0
+offset_right = 574.0
+offset_bottom = 322.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="LineEdit" type="LineEdit" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -2.0
+offset_top = 67.0
+offset_right = 668.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_u6mwd")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "IDENTIFIER"
+script = ExtResource("2_hktyw")
+
+[node name="status" type="Label" parent="LineEdit"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 40.0
+offset_right = 195.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u6mwd")
+theme_override_font_sizes/font_size = 16
+text = "INCORRECT ID"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="idList" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 125.0
+offset_right = 195.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("1_f80wh")
+theme_override_font_sizes/font_size = 41
+text = "ID LIST*:"
+
+[node name="list" type="Label" parent="idList"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 6.0
+offset_top = 37.0
+offset_right = 569.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_u6mwd")
+theme_override_font_sizes/font_size = 16
+text = "@PICKELZ / @DERNI     @SMORGE
+@WHITEFACE            @DEADMAN68687
+@CASUALCHARISKENJOYER @KEON
+@MATHEMATICA / CHARA  @KATACLYSMIX
+@SPECIMEN_2 / LEAN
+
+"
+
+[node name="disclaimer" type="Label" parent="idList"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 165.0
+offset_right = 374.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_u6mwd")
+theme_override_font_sizes/font_size = 8
+text = "*ALL IDENTIFIERS MUST BE INPUTTED IN UPPERCASE"
+
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]

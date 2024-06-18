@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4k06xc0ih7ya"]
+
+[ext_resource type="Script" path="res://scenes slash scripts/cannon.gd" id="1_f2n5d"]
+[ext_resource type="Script" path="res://scenes slash scripts/mainLaser.gd" id="2_fehfm"]
+[ext_resource type="Script" path="res://scenes slash scripts/laserCollision.gd" id="3_iqcxk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gynlr"]
+bg_color = Color(0, 1, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 9
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2vl1"]
+size = Vector2(8, 937)
+
+[node name="laser" type="Node2D"]
+script = ExtResource("1_f2n5d")
+
+[node name="mainLaser" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -52.0
+offset_right = 20.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gynlr")
+script = ExtResource("2_fehfm")
+
+[node name="ColorRect" type="ColorRect" parent="mainLaser"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 104.0
+offset_right = 24.0
+offset_bottom = 2304.0
+color = Color(1, 0, 0, 1)
+
+[node name="laserCollision" type="Area2D" parent="mainLaser/ColorRect"]
+position = Vector2(-16, -104)
+script = ExtResource("3_iqcxk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mainLaser/ColorRect/laserCollision"]
+position = Vector2(20, 572.5)
+shape = SubResource("RectangleShape2D_v2vl1")
+
+[connection signal="area_entered" from="mainLaser/ColorRect/laserCollision" to="." method="_on_laser_collision_area_entered"]
+[connection signal="body_entered" from="mainLaser/ColorRect/laserCollision" to="mainLaser/ColorRect/laserCollision" method="_on_body_entered"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://cah0uyf2hj5w0"]
+
+[ext_resource type="Script" path="res://stats.gd" id="1_0tib4"]
+[ext_resource type="FontFile" uid="uid://cbeh77ugvvvhw" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="2_toe8p"]
+[ext_resource type="FontFile" uid="uid://clholgmn1ksxe" path="res://fonts/super-mario-bros-nes.ttf" id="3_bl13s"]
+
+[node name="stats" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0tib4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="pass" type="Label" parent="."]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_toe8p")
+theme_override_font_sizes/font_size = 40
+text = "YOU HAVE PASSED YOUR FIRST TEST."
+autowrap_mode = 2
+
+[node name="acsiiPfp" type="Label" parent="."]
+layout_mode = 0
+offset_top = 264.0
+offset_right = 264.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_bl13s")
+theme_override_font_sizes/font_size = 24
+text = "IDENTIFIER:
+@SMORGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 324.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="stats" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="hits" type="Label" parent="stats"]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 280.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_bl13s")
+theme_override_font_sizes/font_size = 24
+
+[node name="restarts" type="Label" parent="stats"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 296.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_bl13s")
+theme_override_font_sizes/font_size = 24
+
+[node name="score" type="Label" parent="stats"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 296.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_bl13s")
+theme_override_font_sizes/font_size = 24
+
+[node name="quit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 40.0
+offset_right = 568.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_bl13s")
+theme_override_font_sizes/font_size = 16
+text = "<PRESS ENTER/SPACE TO QUIT>"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

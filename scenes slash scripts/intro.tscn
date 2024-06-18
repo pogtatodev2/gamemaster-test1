@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://r1v0scicfsai"]
+
+[ext_resource type="Script" path="res://scenes slash scripts/flavor.gd" id="1_5w80n"]
+[ext_resource type="FontFile" uid="uid://cbeh77ugvvvhw" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="1_rcsvg"]
+[ext_resource type="FontFile" uid="uid://clholgmn1ksxe" path="res://fonts/super-mario-bros-nes.ttf" id="3_buqcj"]
+[ext_resource type="Script" path="res://scenes slash scripts/countdown.gd" id="4_00gm1"]
+
+[node name="intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="flavor" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 324.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("1_rcsvg")
+theme_override_font_sizes/font_size = 41
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("1_5w80n")
+
+[node name="Timer" type="Timer" parent="flavor"]
+process_callback = 0
+autostart = true
+
+[node name="Label" type="Label" parent="flavor"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("3_buqcj")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_00gm1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 324.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="timeout" from="flavor/Timer" to="flavor" method="_on_timer_timeout"]
+[connection signal="timeout" from="flavor/Timer" to="flavor/Label" method="_on_timer_timeout"]

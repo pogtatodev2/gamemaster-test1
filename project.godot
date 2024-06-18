@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="TEST NUMBER ONE"
+run/main_scene="res://scenes slash scripts/name_select.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://fonts/ecpipse.jpg"
+
+[autoload]
+
+glovar="*res://scenes slash scripts/glovar.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[editor]
+
+run/main_run_args="--rendering-driver opengl3"

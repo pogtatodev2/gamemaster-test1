@@ -1,0 +1,145 @@
+[gd_scene load_steps=10 format=3 uid="uid://ny8hyp1p3sds"]
+
+[ext_resource type="Script" path="res://scenes slash scripts/gamen_1.gd" id="1_hfmvo"]
+[ext_resource type="Texture2D" uid="uid://qb2jc6375x14" path="res://sprites/spritesheet.png" id="1_v01qd"]
+[ext_resource type="PackedScene" uid="uid://bt3itx7geehia" path="res://scenes slash scripts/game_1_player.tscn" id="2_y7xvm"]
+[ext_resource type="PackedScene" uid="uid://d4k06xc0ih7ya" path="res://scenes slash scripts/cannon.tscn" id="3_loccd"]
+[ext_resource type="FontFile" uid="uid://clholgmn1ksxe" path="res://fonts/super-mario-bros-nes.ttf" id="5_o1e63"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v14nf"]
+load_path = "res://.godot/imported/spritesheet.png-42e9ee1c9ea0b3d4defd67415dc59dd9.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gu4np"]
+texture = SubResource("CompressedTexture2D_v14nf")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ywl1m"]
+texture = ExtResource("1_v01qd")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 0.595276, 0, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, -0.375, 0, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 0.375, 1.875)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -0.5, 0.875)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_lt1uv"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_gu4np")
+sources/1 = SubResource("TileSetAtlasSource_ywl1m")
+
+[node name="gamen1" type="Node2D"]
+script = ExtResource("1_hfmvo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_lt1uv")
+format = 2
+layer_0/tile_data = PackedInt32Array(851968, 65537, 0, 917504, 65537, 0, 983040, 65537, 0, 1048576, 65537, 0, 1114112, 65537, 0, 1179648, 65537, 0, 1245184, 65537, 0, 1310720, 65537, 0, 983041, 65537, 0, 1048577, 65537, 0, 1114113, 65537, 0, 1179649, 65537, 0, 1245185, 65537, 0, 1310721, 65537, 0, 983042, 65537, 0, 1048578, 65537, 0, 1114114, 65537, 0, 1179650, 65537, 0, 1245186, 65537, 0, 1310722, 65537, 0, 983043, 65537, 0, 1048579, 65537, 0, 1114115, 65537, 0, 1179651, 65537, 0, 1245187, 65537, 0, 1310723, 65537, 0, 983044, 65537, 0, 1048580, 65537, 0, 1114116, 65537, 0, 1179652, 65537, 0, 1245188, 65537, 0, 1310724, 65537, 0, 983045, 65537, 0, 1048581, 65537, 0, 1114117, 65537, 0, 1179653, 65537, 0, 1245189, 65537, 0, 1310725, 65537, 0, 983046, 65537, 0, 1048582, 65537, 0, 1114118, 65537, 0, 1179654, 65537, 0, 1245190, 65537, 0, 1310726, 65537, 0, 983047, 65537, 0, 1048583, 65537, 0, 1114119, 65537, 0, 1179655, 65537, 0, 1245191, 65537, 0, 1310727, 65537, 0, 983048, 65537, 0, 1048584, 65537, 0, 1114120, 65537, 0, 1179656, 65537, 0, 1245192, 65537, 0, 1310728, 65537, 0, 983049, 65537, 0, 1048585, 65537, 0, 1114121, 65537, 0, 1179657, 65537, 0, 1245193, 65537, 0, 1310729, 65537, 0, 983050, 65537, 0, 1048586, 65537, 0, 1114122, 65537, 0, 1179658, 65537, 0, 1245194, 65537, 0, 1310730, 65537, 0, 983051, 65537, 0, 1048587, 65537, 0, 1114123, 65537, 0, 1179659, 65537, 0, 1245195, 65537, 0, 1310731, 65537, 0, 983052, 65537, 0, 1048588, 65537, 0, 1114124, 65537, 0, 1179660, 65537, 0, 1245196, 65537, 0, 1310732, 65537, 0, 983053, 65537, 0, 1048589, 65537, 0, 1114125, 65537, 0, 1179661, 65537, 0, 1245197, 65537, 0, 1310733, 65537, 0, 983054, 65537, 0, 1048590, 65537, 0, 1114126, 65537, 0, 1179662, 65537, 0, 1245198, 65537, 0, 1310734, 65537, 0, 983055, 65537, 0, 1048591, 65537, 0, 1114127, 65537, 0, 1179663, 65537, 0, 1245199, 65537, 0, 1310735, 65537, 0, 983056, 65537, 0, 1048592, 65537, 0, 1114128, 65537, 0, 1179664, 65537, 0, 1245200, 65537, 0, 1310736, 65537, 0, 983057, 65537, 0, 1048593, 65537, 0, 1114129, 65537, 0, 1179665, 65537, 0, 1245201, 65537, 0, 1310737, 65537, 0, 983058, 65537, 0, 1048594, 65537, 0, 1114130, 65537, 0, 1179666, 65537, 0, 1245202, 65537, 0, 1310738, 65537, 0, 983059, 65537, 0, 1048595, 65537, 0, 1114131, 65537, 0, 1179667, 65537, 0, 1245203, 65537, 0, 1310739, 65537, 0, 983060, 65537, 0, 1048596, 65537, 0, 1114132, 65537, 0, 1179668, 65537, 0, 1245204, 65537, 0, 1310740, 65537, 0, 983061, 65537, 0, 1048597, 65537, 0, 1114133, 65537, 0, 1179669, 65537, 0, 1245205, 65537, 0, 1310741, 65537, 0, 983062, 65537, 0, 1048598, 65537, 0, 1114134, 65537, 0, 1179670, 65537, 0, 1245206, 65537, 0, 1310742, 65537, 0, 983063, 65537, 0, 1048599, 65537, 0, 1114135, 65537, 0, 1179671, 65537, 0, 1245207, 65537, 0, 1310743, 65537, 0, 983064, 65537, 0, 1048600, 65537, 0, 1114136, 65537, 0, 1179672, 65537, 0, 1245208, 65537, 0, 1310744, 65537, 0, 983065, 65537, 0, 1048601, 65537, 0, 1114137, 65537, 0, 1179673, 65537, 0, 1245209, 65537, 0, 1310745, 65537, 0, 983066, 65537, 0, 1048602, 65537, 0, 1114138, 65537, 0, 1179674, 65537, 0, 1245210, 65537, 0, 1310746, 65537, 0, 983067, 65537, 0, 1048603, 65537, 0, 1114139, 65537, 0, 1179675, 65537, 0, 1245211, 65537, 0, 1310747, 65537, 0, 983068, 65537, 0, 1048604, 65537, 0, 1114140, 65537, 0, 1179676, 65537, 0, 1245212, 65537, 0, 1310748, 65537, 0, 983069, 65537, 0, 1048605, 65537, 0, 1114141, 65537, 0, 1179677, 65537, 0, 1245213, 65537, 0, 1310749, 65537, 0, 983070, 65537, 0, 1048606, 65537, 0, 1114142, 65537, 0, 1179678, 65537, 0, 1245214, 65537, 0, 1310750, 65537, 0, 983071, 65537, 0, 1048607, 65537, 0, 1114143, 65537, 0, 1179679, 65537, 0, 1245215, 65537, 0, 1310751, 65537, 0, 983072, 65537, 0, 1048608, 65537, 0, 1114144, 65537, 0, 1179680, 65537, 0, 1245216, 65537, 0, 1310752, 65537, 0, 983073, 65537, 0, 1048609, 65537, 0, 1114145, 65537, 0, 1179681, 65537, 0, 1245217, 65537, 0, 1310753, 65537, 0, 983074, 65537, 0, 1048610, 65537, 0, 1114146, 65537, 0, 1179682, 65537, 0, 1245218, 65537, 0, 1310754, 65537, 0, 852003, 65537, 0, 917539, 65537, 0, 983075, 65537, 0, 1048611, 65537, 0, 1114147, 65537, 0, 1179683, 65537, 0, 1245219, 65537, 0, 1310755, 65537, 0, 786432, 65537, 0, 720896, 65537, 0, 655360, 65537, 0, 589824, 65537, 0, 524288, 65537, 0, 458752, 65537, 0, 393216, 65537, 0, 327680, 65537, 0, 262144, 65537, 0, 196608, 65537, 0, 131072, 65537, 0, 65536, 65537, 0, 0, 65537, 0, 786467, 65537, 0, 720931, 65537, 0, 655395, 65537, 0, 589859, 65537, 0, 524323, 65537, 0, 458787, 65537, 0, 393251, 65537, 0, 327715, 65537, 0, 262179, 65537, 0, 196643, 65537, 0, 131107, 65537, 0, 65571, 65537, 0, 35, 65537, 0, 1, 65537, 0, 2, 65537, 0, 3, 65537, 0, 4, 65537, 0, 5, 65537, 0, 6, 65537, 0, 7, 65537, 0, 8, 65537, 0, 9, 65537, 0, 10, 65537, 0, 11, 65537, 0, 12, 65537, 0, 13, 65537, 0, 14, 65537, 0, 15, 65537, 0, 16, 65537, 0, 17, 65537, 0, 18, 65537, 0, 19, 65537, 0, 20, 65537, 0, 21, 65537, 0, 22, 65537, 0, 23, 65537, 0, 24, 65537, 0, 25, 65537, 0, 26, 65537, 0, 27, 65537, 0, 28, 65537, 0, 29, 65537, 0, 30, 65537, 0, 31, 65537, 0, 32, 65537, 0, 33, 65537, 0, 34, 65537, 0, 131073, 65537, 0, 65538, 65537, 1, 65569, 65537, 2, 131106, 65537, 0, 65570, 65537, 0, 65537, 65537, 0, 786433, 65537, 1, 786466, 65537, 2, 196642, 65537, 0, 262178, 65537, 0, 327714, 65537, 0, 393250, 65537, 0, 458786, 65537, 0, 524322, 65537, 0, 589858, 65537, 0, 655394, 65537, 0, 720930, 65537, 0, 720897, 65537, 0, 655361, 65537, 0, 589825, 65537, 0, 524289, 65537, 0, 458753, 65537, 0, 393217, 65537, 0, 327681, 65537, 0, 262145, 65537, 0, 196609, 65537, 0)
+
+[node name="game1player" parent="." instance=ExtResource("2_y7xvm")]
+position = Vector2(368, 184)
+scale = Vector2(0.7, 0.7)
+
+[node name="cannon" parent="." instance=ExtResource("3_loccd")]
+z_index = -10
+position = Vector2(48, 32)
+rotation = -0.523599
+scale = Vector2(0.35, 0.35)
+
+[node name="cannon2" parent="." instance=ExtResource("3_loccd")]
+z_index = -10
+position = Vector2(24, 232)
+rotation = -2.24449
+scale = Vector2(0.35, 0.35)
+
+[node name="cannon3" parent="." instance=ExtResource("3_loccd")]
+z_index = -10
+position = Vector2(529, 136)
+rotation = -4.76126
+scale = Vector2(0.35, 0.35)
+
+[node name="cannon4" parent="." instance=ExtResource("3_loccd")]
+z_index = -10
+position = Vector2(536, 40)
+rotation = -6.17847
+scale = Vector2(0.35, 0.35)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 24.0
+offset_bottom = 24.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = 40.0
+offset_right = 64.0
+offset_bottom = 24.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
+offset_left = 80.0
+offset_right = 104.0
+offset_bottom = 24.0
+color = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 536.0
+offset_right = 576.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_o1e63")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

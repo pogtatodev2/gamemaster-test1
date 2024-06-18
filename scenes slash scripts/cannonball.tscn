@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://6jkc4l24d2oi"]
+
+[node name="cannonball" type="Sprite2D"]
